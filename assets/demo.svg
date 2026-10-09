@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+  <rect width="720" height="340" rx="16" fill="#1A1A1A"/>
+  <text x="32" y="42" fill="#E8E8E8" font-size="17" font-weight="500">针对「乳糖不耐 + 不吃牛肉」</text>
+  <text x="32" y="62" fill="#8A8A8A" font-size="12">门店 1450713 · 实测数据 2026-10-09</text>
+
+  <rect x="32" y="78" width="656" height="76" rx="10" fill="#2A2418" stroke="#D8A32E" stroke-width="0.5"/>
+  <text x="50" y="100" fill="#E8B93A" font-size="13" font-weight="500">可特调后吃</text>
+  <text x="50" y="122" fill="#D8D8D8" font-size="12.5">板烧鸡腿堡 ¥23.5 — 去掉「吉士」可避开乳制品</text>
+  <text x="50" y="142" fill="#D8D8D8" font-size="12.5">巨无霸三件套 ¥36.5 — 汉堡去吉士；小食换玉米杯；饮料换无糖可乐</text>
+
+  <rect x="32" y="164" width="656" height="60" rx="10" fill="#2A1A1A" stroke="#C4503A" stroke-width="0.5"/>
+  <text x="50" y="186" fill="#E0705A" font-size="13" font-weight="500">建议避开</text>
+  <text x="50" y="208" fill="#D8D8D8" font-size="12.5">巨无霸 / 培根安格斯厚牛堡 — 主料为牛肉，特调无法去除</text>
+
+  <rect x="32" y="234" width="656" height="46" rx="10" fill="#1E2A38" stroke="#4A7FB5" stroke-width="0.5"/>
+  <text x="50" y="254" fill="#7FB0E0" font-size="12.5" font-weight="500">需现场确认</text>
+  <text x="50" y="271" fill="#B8C4D0" font-size="11.5">过敏原 / 素食标识 / 清真认证：官方接口未提供数据</text>
+
+  <text x="32" y="308" fill="#6A6A6A" font-size="11">配料数据来自 query-meal-detail 真实返回 · 本项目不做无依据的成分推断</text>
+</svg>
