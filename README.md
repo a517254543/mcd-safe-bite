@@ -52,8 +52,14 @@
 这也是本项目坚持只用 `query-meal-detail` 数据的原因。
 
 <p align="center">
-  <img src="assets/demo.svg" alt="乳糖不耐且不吃牛肉场景下的判定结果" width="720">
+  <img src="assets/chat.png" alt="真实对话截图：用户询问乳糖不耐且不吃牛肉，Skill 返回三档判定结果" width="820">
 </p>
+
+<p align="center"><sub>真实运行截图 · 门店 1450713 · 2026-10-09 · 每一行结论都可回溯到 MCP 返回字段</sub></p>
+
+> 复现方式：接入 MCP 后输入「我乳糖不耐，也不吃牛肉」并给出城市与位置即可。
+> 若你所在门店出现菜名与配料不一致的情况，欢迎提 Issue ——
+> 那正是本项目最想被挑战的地方。
 
 ---
 

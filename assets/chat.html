@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 900px; margin: 0 auto;
+    background: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .win { padding: 0 0 20px; }
+
+  /* 标题栏 */
+  .titlebar {
+    display: flex; align-items: center; gap: 10px;
+    padding: 14px 22px; background: #fafafa;
+    border-bottom: 1px solid #e8e8e8;
+  }
+  .dots { display: flex; gap: 6px; }
+  .dots i { width: 11px; height: 11px; border-radius: 50%; display: block; }
+  .dots i:nth-child(1) { background: #ff5f57; }
+  .dots i:nth-child(2) { background: #febc2e; }
+  .dots i:nth-child(3) { background: #28c840; }
+  .tb-title { font-size: 13px; color: #65656b; font-weight: 500; }
+
+  .body { padding: 22px 26px 6px; }
+
+  /* 用户消息 */
+  .user { display: flex; justify-content: flex-end; margin-bottom: 20px; }
+  .bubble-u {
+    background: #1a7f37; color: #fff;
+    padding: 11px 16px; border-radius: 14px 14px 3px 14px;
+    font-size: 14.5px; line-height: 1.6; max-width: 620px;
+  }
+
+  /* 助手消息 */
+  .ai { display: flex; gap: 11px; margin-bottom: 18px; }
+  .avatar {
+    width: 27px; height: 27px; border-radius: 50%; flex: none;
+    background: #1a7f37; color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 600; margin-top: 2px;
+  }
+  .bubble-a { flex: 1; min-width: 0; }
+
+  /* 工具调用 */
+  .tool {
+    display: flex; align-items: center; gap: 7px;
+    font-size: 12.5px; color: #6a6a6a; margin-bottom: 7px;
+  }
+  .tool b { font-weight: 500; color: #444; }
+  .ok { color: #1a7f37; font-weight: 500; }
+
+  /* 三档结果 */
+  .tier { border-radius: 9px; padding: 12px 14px; margin-bottom: 10px; }
+  .tier-h { font-size: 13.5px; font-weight: 600; margin-bottom: 8px; }
+
+  .t-red  { background: #fff5f4; border-left: 3px solid #d93a2b; }
+  .t-red .tier-h { color: #b3271a; }
+  .t-grn  { background: #f2fbf4; border-left: 3px solid #1a7f37; }
+  .t-grn .tier-h { color: #14682c; }
+  .t-amb  { background: #fff9ed; border-left: 3px solid #d98b00; }
+  .t-amb .tier-h { color: #a06a00; }
+
+  .row { display: flex; align-items: baseline; gap: 8px; font-size: 13.5px; line-height: 1.9; }
+  .nm { font-weight: 500; color: #1a1a1a; white-space: nowrap; }
+  .pz { color: #888; font-size: 12.5px; white-space: nowrap; }
+  .fg { color: #57606a; font-size: 12.5px; }
+  code {
+    background: #eff1f3; padding: 1px 5px; border-radius: 3px;
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 11.5px; color: #24292f;
+  }
+  .warn { color: #a06a00; }
+
+  .note {
+    font-size: 12px; color: #8b949e; line-height: 1.75;
+    margin-top: 12px; padding-top: 12px; border-top: 1px dashed #e0e0e0;
+  }
+  .sig {
+    display: flex; align-items: center; gap: 7px;
+    margin-top: 14px; padding: 9px 12px;
+    background: #f6f8fa; border-radius: 7px;
+    font-size: 11.5px; color: #57606a;
+  }
+  .sig .dot { width: 6px; height: 6px; border-radius: 50%; background: #1a7f37; flex: none; }
+</style>
+</head>
+<body>
+<div class="win">
+  <div class="titlebar">
+    <div class="dots"><i></i><i></i><i></i></div>
+    <div class="tb-title">mcd-safe-bite · 麦麦安心吃</div>
+  </div>
+
+  <div class="body">
+
+    <div class="user">
+      <div class="bubble-u">我乳糖不耐，也不吃牛肉。上海人民广场附近这家店有什么能吃的？</div>
+    </div>
+
+    <div class="ai">
+      <div class="avatar">麦</div>
+      <div class="bubble-a">
+
+        <div class="tool"><b>query-nearby-stores</b> 人民广场 · 144m <span class="ok">✓</span> 门店 1450713</div>
+        <div class="tool"><b>query-meals</b> 在售 100+ 项 <span class="ok">✓</span></div>
+        <div class="tool"><b>query-meal-detail</b> 逐品读取配料与特调 <span class="ok">✓</span></div>
+
+        <div style="height:14px"></div>
+
+        <div class="tier t-red">
+          <div class="tier-h">⛔ 建议避开 · 主料为牛肉，特调无法去除</div>
+          <div class="row"><span class="nm">巨无霸</span><span class="pz">¥25.5</span><span class="fg">饼体是牛肉，去酱不等于去牛肉</span></div>
+          <div class="row"><span class="nm">双层吉士汉堡</span><span class="pz">¥23</span><span class="fg">牛肉 + 吉士；配料表确认含吉士</span></div>
+        </div>
+
+        <div class="tier t-grn">
+          <div class="tier-h">✅ 配料表未见触发项（仍需现场确认交叉污染）</div>
+          <div class="row"><span class="nm">麦辣鸡腿汉堡</span><span class="pz">¥22.5</span><span class="fg">麦香鸡酱、切块生菜</span></div>
+          <div class="row"><span class="nm">麦香鸡</span><span class="pz">¥17</span><span class="fg">麦香鸡酱、生菜</span></div>
+          <div class="row"><span class="nm">龙焰芝士棒鸡腿堡</span><span class="pz">¥27</span><span class="fg">辣椒黄油风味酱、切块生菜</span></div>
+          <div class="row"><span class="nm">薯条</span><span class="pz">¥13.5</span><span class="fg">无配料数据</span></div>
+          <div class="row"><span class="nm">小杯玉米杯</span><span class="pz">¥13</span><span class="fg">无配料数据</span></div>
+          <div class="row"><span class="nm">圆筒冰淇淋</span><span class="pz">¥5</span><span class="fg">无配料数据</span></div>
+        </div>
+
+        <div class="tier t-amb">
+          <div class="tier-h">⚠️ 需现场确认</div>
+          <div class="row"><span class="fg">「龙焰芝士棒鸡腿堡」名字含芝士，配料表未见吉士项，以门店实际为准</span></div>
+          <div class="row"><span class="fg">共用油锅与器具交叉污染：官方接口无此数据</span></div>
+        </div>
+
+        <div class="note">
+          结论依据当前门店菜单与配料特调能力，判定以 <code>query-meal-detail</code> 配料表为准，不以菜名为准。<br>
+          过敏原信息官方未在接口中提供，涉及严重过敏请向门店店员核实。本结果不构成医疗或营养建议。
+        </div>
+
+        <div class="sig">
+          <span class="dot"></span>
+          实测门店 1450713 · 麦当劳上海黄浦华旭国际大厦餐厅 · 2026-10-09
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
